@@ -1,0 +1,14 @@
+.currencyDropdown {
+  margin-right: 50%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-width: 5px;
+  border-color:black;
+  margin-top: 30px;
+  margin-left: 40%;
+}

@@ -1,12 +1,13 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap.bundle.min.js'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './css/styles.css';
-import ExchangeRateService from './exchangeRateService.js';
+import ExchangeRateService from './services/exchangeRateAPI.js';
+import currencyListObject from '../src/assets/globalCurrencyList.js';
 
 // Business
 
-function getApiData(amount) {
+function getApiData(amount, countryCode) {
   ExchangeRateService.getExchangeRate(amount)
     .then(function(exchangeAPIResponse) {
       if (exchangeAPIResponse instanceof Error) {
@@ -14,8 +15,9 @@ function getApiData(amount) {
         ${exchangeAPIResponse.message}`;
         throw new Error(errorMessage);
       }
-      const description = exchangeAPIResponse.response[0].
-    })
+      const description = exchangeAPIResponse.response[0];
+    });
 }
 
 //UI Logic
+

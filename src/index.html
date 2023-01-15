@@ -4,19 +4,25 @@
   <title>Currency Exchange</title>
 </head>
 <body>
-  <div class="'container">
-    <h1>Get Current Curreny Exchange Rate from U.S. Dollar to 161 other Countries!</h1>
-    <p>To get the current currency exchange rate please enter a US Dollar amount:</p>
+  <div class="'container jumbotron">
+    <h1>Get Current Currency Exchange Rate from U.S. Dollar to 161 Other Countries!</h1>
+    <p>Please enter a US dollar amount and choose the country currency you would like to see an exchange rate for:</p>
     <form id="form">
       <label for="dollar">Dollar Amount:</label>
-      <input type="number" min="1" step="any" id="dollar">
-      <label for="exchangeCurrency">Country Currency:</label>
-      
-      <button type="submit" class="btn" id="dollarBtn">Get Current Exchange Rate</button>
+      <input type="number" min="1" step=".01" id="dollar">
+      <br>
+      <div class="input-group mb-3 currencyDropdown">
+        <select class="custom-select" id="inputGroupSelect">
+          <option selected>Choose A Currency...</option>
+        </select>
+        <div class="input-group-append">
+          <label class="input-group-text">Options</label>
+        </div>
+      </div>
+      <button type="submit" class="btn center" id="exchangeBtn">Get Current Exchange Rate</button>
     </form>
     <p id="showExchangeRates"></p>
     <p id="error"></p>
-    <div id="gif"></div>
   </div>
 </body>
 </html>
