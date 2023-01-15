@@ -1,11 +1,7 @@
 export default class CurrencyList {
 
   static codeList() {
-    // constructor(cc, symbol, currencyName) {
-    //   this.cc = cc,
-    //   this.symbol = symbol,
-    //   this.currencyName = currencyName
-    // }
+  
     return [
       {"cc":"AED","symbol":"د.إ;","currencyName":"UAE Dirham"},
       {"cc":"AFN","symbol":"؋","currencyName":"Afghan Afghani"},

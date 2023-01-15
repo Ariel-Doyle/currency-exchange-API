@@ -19,20 +19,21 @@ async function getExchangeRate(currencyCode, dollarAmount) {
 //UI Logic
 
 function populateDropdownMenu() {
-  const selectOptions = document.getElementById("inputGroupSelect");
+  const selectOptions = document.querySelector("#inputGroupSelect");
   const populateMenu = CurrencyList.codeList();
-  for(i=0; i<populateMenu.length; i++) {
+  for(let i=0; i < populateMenu.length; i++) {
     let menuItem = populateMenu[i];
     let element = document.createElement('option');
-    element.innerText = menuItem;
+    element.innerText = `${menuItem.currencyName}, Country Code: ${menuItem.cc}, Currency Symbol: ${menuItem.symbol}`;
+    element.value = `${menuItem.cc}`;
     selectOptions.appendChild(element);    
   }
-  console.log(populateMenu[0]);
 }
 
-function printElements(response, dollarAmount) {
+function printElements(response) {
+  let amount = document.querySelector('#dollar').value;
   document.querySelector('#showExchangeRates').innerText = `The exchange rate from US Dollars to ${response.target_code} is ${response.conversion_rate}.
-  The ${dollarAmount} in USD is ${response.conversion_result}.`;
+  $${amount} USD is ${response.conversion_result} ${response.target_code}.`;
 }
 
 function printError(error, currencyCode) {
@@ -44,13 +45,11 @@ function handleFormSubmission(e) {
   e.preventDefault();
   const currencyCode = document.querySelector('#inputGroupSelect').value;
   const dollarAmount = document.querySelector('#dollar').value;
-  document.querySelector('#dollar').value = null;
   getExchangeRate(currencyCode, dollarAmount);
 }
 
 window.addEventListener("load", function() {
-  populateDropdownMenu;
-  console.log()
+  populateDropdownMenu();
   document.querySelector('form').addEventListener('submit', handleFormSubmission);
 });
 
