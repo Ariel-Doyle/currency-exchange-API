@@ -33,12 +33,11 @@ function populateDropdownMenu() {
 function printElements(response) {
   let amount = document.querySelector('#dollar').value;
   document.querySelector('#showExchangeRates').innerText = `The exchange rate from US Dollars to ${response.target_code} is ${response.conversion_rate}.
-  $${amount} USD is ${response.conversion_result} ${response.target_code}.`;
+  ${amount} USD is ${response.conversion_result} ${response.target_code}.`;
 }
 
-function printError(error, currencyCode) {
-  document.querySelector('#error').innerText = `There was an error accessing exchange rates for ${currencyCode}:
-  ${error}.`;
+function printError(error) {
+  document.querySelector('#error').innerText = `There was an error accessing exchange rates for your selected country. Please type in a numerical value (xxxx.xxxx) and select a country from the dropdown menu. ${error}`;
 }
 
 function handleFormSubmission(e) {
