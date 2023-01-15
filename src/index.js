@@ -20,13 +20,14 @@ async function getExchangeRate(currencyCode, dollarAmount) {
 
 function populateDropdownMenu() {
   const selectOptions = document.getElementById("inputGroupSelect");
-  const populateMenu = CurrencyList.codeList;
+  const populateMenu = CurrencyList.codeList();
   for(i=0; i<populateMenu.length; i++) {
     let menuItem = populateMenu[i];
     let element = document.createElement('option');
     element.innerText = menuItem;
     selectOptions.appendChild(element);    
   }
+  console.log(populateMenu[0]);
 }
 
 function printElements(response, dollarAmount) {
@@ -48,7 +49,8 @@ function handleFormSubmission(e) {
 }
 
 window.addEventListener("load", function() {
-  this.document.querySelector('inputGroupSelect').addEventListener('click', populateDropdownMenu);
-  this.document.querySelector('form').addEventListener('submit', handleFormSubmission);
+  populateDropdownMenu;
+  console.log()
+  document.querySelector('form').addEventListener('submit', handleFormSubmission);
 });
 
