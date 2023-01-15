@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './css/styles.css';
 import ExchangeRateService from './services/exchangeRateAPI.js';
-import currencyListObject from '../src/assets/globalCurrencyList.js';
+import CurrencyList from '../src/assets/globalCurrencyList.js';
 
 // Business
 
