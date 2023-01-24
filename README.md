@@ -31,14 +31,15 @@ _This is JavaScript business logic as practice for writing code in line with les
 -  _Access [Github](https://github.com/)._
 - _Clone this repository, [Currency Exchange API](https://github.com/Ariel-Doyle/currency-exchange-API.git), to your desktop._
 - _Open your command line and type >**npm install**< in order to install the packages and package versions listed in the 'package.json' file._
-- _You will require an API Key in order to use this application, please see [ExchangeRate-API](https://www.exchangerate-api.com/) to sign up for a key. Input your API Key in the url <https://v6.exchangerate-api.com/v6/YourAPIKeyHere/pair/USD/${currencyCode}/${dollarAmount}> located in the exchangeRateAPI.js folder_ 
+- _You will require an API Key in order to use this application, please see [ExchangeRate-API](https://www.exchangerate-api.com/) to sign up for a key. Create a >.env< file and input your API Key into the >.env<, then the url <https://v6.exchangerate-api.com/v6/${process.env.API_Key}/pair/USD/${currencyCode}/${dollarAmount}> located in the exchangeRateAPI.js folder will have access to your API key._
+-_More information about creating and securely storing API keys can be found [here](https://www.learnhowtoprogram.com/intermediate-javascript-part-time/asynchrony-and-apis/protecting-api-keys)._
 - _After the install, on your command line type >**npm run build**<._
 - _Then, on your command line, type >**npm run start**< to open the page in your local browser._
 - _Navigate to the top level of the directory, use the files within the 'js' folder to view the Business Logic, and the 'index.js' file to view the User Interface Logic._
 
 ## Known Bugs
 
-- _Error handling does not return API-generated errors._
+- _None Currently Known._
 
 ## License
 
